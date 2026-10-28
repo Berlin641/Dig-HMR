@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DIG-HMR: dual-view human mesh recovery for operating-room personnel through complementary evidence interaction and world-space fusion.">
+  <title>DIG-HMR | Dual-View Human Mesh Recovery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#abstract">Skip to abstract</a>
+  <main>
+    <header class="hero container">
+      <h1><span class="project-name">DIG-HMR</span><span id="paper-title">Dual-View Human Mesh Recovery for Operating-Room Personnel via Complementary Evidence Interaction and Global-Query World-Space Fusion</span></h1>
+      <p class="authors" id="authors">Authors to be announced</p>
+      <div class="resources" aria-label="Paper resources">
+        <a class="resource" id="code-link" href="https://github.com/Berlin641/Dig-HMR/tree/main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 4l-4 16"/></svg><span>Code</span></a>
+      </div>
+    </header>
+
+    <section class="teaser container" aria-label="Graphical abstract">
+      <figure>
+        <button class="figure-button" type="button" data-figure="assets/graphical-abstract.png" aria-label="Enlarge graphical abstract">
+          <img src="assets/graphical-abstract.png" width="2268" height="907" alt="DIG-HMR combines synchronized RGB observations from two calibrated cameras, exchanges complementary person evidence, and fuses the two views into unified world-space MHR bodies.">
+        </button>
+      </figure>
+      <p class="tldr"><strong>TL;DR</strong><span id="tldr"></span></p>
+    </section>
+
+    <section class="abstract-section" id="abstract" aria-labelledby="abstract-heading">
+      <div class="text-container">
+        <h2 id="abstract-heading">Abstract</h2>
+        <p id="abstract-text"></p>
+      </div>
+    </section>
+
+    <section class="method container" id="method" aria-labelledby="method-heading">
+      <h2 id="method-heading">Method Overview</h2>
+      <figure>
+        <button class="figure-button" type="button" data-figure="assets/method-overview.png" aria-label="Enlarge method overview">
+          <img src="assets/method-overview.png" width="1920" height="1080" loading="lazy" alt="DIG-HMR framework: shared person feature extraction and ROI Align, a Dual-View Person Interaction Module, and a Global-Query World-Space Fusion Decoder with learnable global queries and initial world references.">
+        </button>
+        <figcaption id="method-caption">Overview of the proposed DIG-HMR framework. Given dual-view synchronized frames, person-centric ROI features are extracted independently from each view. DVPIM enhances the two view-specific person representations. The resulting branch memories are subsequently read by learnable global-query tokens in the GWF. GWF produces a unified set of MHR bodies in the common world coordinate system.</figcaption>
+      </figure>
+    </section>
+    <section class="results container" id="results" aria-labelledby="results-heading">
+      <h2 id="results-heading">Results</h2>
+      <div class="results-list">
+        <div class="result-example" role="group" aria-label="Reconstruction example">
+          <div class="result-images">
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-1-input-0.png" aria-label="Enlarge Input RGB image, view 0">
+                <img src="assets/results/example-1-input-0.png" loading="lazy" alt="Input RGB image, view 0">
+              </button>
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-1-input-1.png" aria-label="Enlarge Input RGB image, view 1">
+                <img src="assets/results/example-1-input-1.png" loading="lazy" alt="Input RGB image, view 1">
+              </button>
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-1-overlay-0.png" aria-label="Enlarge Reconstructed meshes projected into view 0">
+                <img src="assets/results/example-1-overlay-0.png" loading="lazy" alt="Reconstructed meshes projected into view 0">
+              </button>
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-1-overlay-1.png" aria-label="Enlarge Reconstructed meshes projected into view 1">
+                <img src="assets/results/example-1-overlay-1.png" loading="lazy" alt="Reconstructed meshes projected into view 1">
+              </button>
+          </div>
+          <div class="result-orbit">
+            <video autoplay controls muted loop playsinline preload="metadata" aria-label="Orbiting view of the unified world-space reconstruction">
+              <source src="assets/results/example-1.mp4" type="video/mp4">
+              <a href="assets/results/example-1.mp4">Download reconstruction video</a>
+            </video>
+          </div>
+        </div>
+        <div class="result-example" role="group" aria-label="Reconstruction example">
+          <div class="result-images">
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-2-input-0.png" aria-label="Enlarge Input RGB image, view 0">
+                <img src="assets/results/example-2-input-0.png" loading="lazy" alt="Input RGB image, view 0">
+              </button>
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-2-input-1.png" aria-label="Enlarge Input RGB image, view 1">
+                <img src="assets/results/example-2-input-1.png" loading="lazy" alt="Input RGB image, view 1">
+              </button>
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-2-overlay-0.png" aria-label="Enlarge Reconstructed meshes projected into view 0">
+                <img src="assets/results/example-2-overlay-0.png" loading="lazy" alt="Reconstructed meshes projected into view 0">
+              </button>
+              <button class="figure-button result-image" type="button" data-figure="assets/results/example-2-overlay-1.png" aria-label="Enlarge Reconstructed meshes projected into view 1">
+                <img src="assets/results/example-2-overlay-1.png" loading="lazy" alt="Reconstructed meshes projected into view 1">
+              </button>
+          </div>
+          <div class="result-orbit">
+            <video autoplay controls muted loop playsinline preload="metadata" aria-label="Orbiting view of the unified world-space reconstruction">
+              <source src="assets/results/example-2.mp4" type="video/mp4">
+              <a href="assets/results/example-2.mp4">Download reconstruction video</a>
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="implications container" id="implications" aria-labelledby="implications-heading">
+      <h2 id="implications-heading">Potential Implications</h2>
+      <figure>
+        <button class="figure-button" type="button" data-figure="assets/implications/twin_flow_2.png" aria-label="Enlarge offline proof-of-concept scene integration">
+          <img src="assets/implications/twin_flow_2.png" loading="lazy" alt="The offline proof-of-concept operating-room scene integration">
+        </button>
+        <figcaption>The offline proof-of-concept operating-room scene integration</figcaption>
+      </figure>
+      <figure>
+        <button class="figure-button" type="button" data-figure="assets/implications/illustration_of_scene_integration_2.png" aria-label="Enlarge illustrative scene integration">
+          <img src="assets/implications/illustration_of_scene_integration_2.png" loading="lazy" alt="Illustrative scene integration enabled by the unified world-space outputs of DIG-HMR">
+        </button>
+        <figcaption>Illustrative scene integration enabled by the unified world-space outputs of DIG-HMR</figcaption>
+      </figure>
+    </section>
+  </main>
+  <dialog id="figure-dialog" aria-label="Enlarged figure">
+    <button class="close-dialog" type="button" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button>
+    <img id="enlarged-figure" alt="">
+  </dialog>
+</body>
+</html>

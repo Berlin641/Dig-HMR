@@ -1,0 +1,95 @@
+:root { color-scheme: light; --ink: #242830; --muted: #747b87; --blue: #3463aa; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); }
+button, a { -webkit-tap-highlight-color: transparent; }
+.container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.text-container { width: min(900px, calc(100% - 48px)); margin-inline: auto; }
+.hero { text-align: center; padding-top: 66px; padding-bottom: 42px; }
+h1 { max-width: 1060px; margin: 0 auto 25px; font-size: clamp(27px, 3.1vw, 40px); line-height: 1.25; letter-spacing: -1.15px; font-weight: 600; text-wrap: balance; }
+.project-name { display: block; margin-bottom: 11px; font-size: clamp(42px, 5vw, 57px); font-weight: 750; letter-spacing: -2px; color: #2e405b; }
+.authors { margin: 0 0 9px; font-size: 20px; color: var(--blue); line-height: 1.5; white-space: pre-line; }
+.affiliations, .publication { margin: 7px 0; color: var(--muted); font-size: 15px; line-height: 1.5; white-space: pre-line; }
+.publication { margin-top: 12px; }
+.resources { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.resource { display: inline-flex; align-items: center; gap: 8px; border-radius: 24px; background: #303640; color: #fff; padding: 11px 17px; font-size: 15px; text-decoration: none; }
+.resource[aria-disabled="true"] { background: #f0f2f5; color: #6f7681; cursor: default; }
+.resource svg { width: 19px; height: 19px; }
+.soon { font-size: 11px; padding-left: 7px; border-left: 1px solid #cdd1d7; }
+.resource:not([aria-disabled="true"]):hover { background: var(--blue); }
+figure { margin: 0; }
+.figure-button { display: block; border: 0; background: transparent; padding: 0; width: 100%; cursor: zoom-in; border-radius: 5px; }
+img { display: block; max-width: 100%; height: auto; }
+figcaption { margin: 14px auto 0; text-align: center; color: #747b86; font-size: 14px; line-height: 1.6; }
+.tldr { display: flex; gap: 16px; max-width: 940px; margin: 10px auto 0; font-size: 18px; line-height: 1.7; }
+.tldr strong { color: var(--blue); flex-shrink: 0; }
+.teaser { padding-bottom: 49px; }
+h2 { margin: 0 0 25px; text-align: center; font-size: 30px; letter-spacing: -.7px; font-weight: 600; }
+.abstract-section { background: #f6f7f9; padding: 44px 0 48px; }
+#abstract-text { margin: 0; font-size: 16px; line-height: 1.9; text-align: justify; }
+.method { padding-top: 48px; padding-bottom: 58px; }
+.method h2 { margin-bottom: 22px; }
+/* Hide the framework image's bottom whitespace in the page layout. */
+.method .figure-button { aspect-ratio: 1920 / 900; overflow: hidden; }
+#method-caption { max-width: 900px; margin-top: 10px; text-align: left; font-size: 16px; line-height: 1.85; color: var(--ink); }
+footer { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; border-top: 1px solid #e8ebef; padding-block: 24px 35px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+footer a { text-decoration: none; font-weight: 700; }
+.skip-link { position: absolute; top: -60px; left: 12px; padding: 12px; background: white; z-index: 5; }
+.skip-link:focus { top: 12px; }
+:focus-visible { outline: 3px solid #3463aa; outline-offset: 5px; }
+dialog { width: min(1600px, 96vw); max-height: 94vh; border: none; border-radius: 10px; padding: 52px 16px 16px; overflow: auto; }
+dialog::backdrop { background: rgb(16 25 40 / 75%); }
+dialog img { width: 100%; }
+.close-dialog { position: absolute; right: 15px; top: 12px; border: 0; background: #edf0f4; border-radius: 6px; padding: 7px 12px; color: var(--ink); font-size: 14px; cursor: pointer; }
+.close-dialog span { margin-left: 8px; font-size: 19px; }
+@media (max-width: 640px) {
+  .container, .text-container { width: calc(100% - 32px); }
+  .hero { padding-top: 37px; padding-bottom: 32px; }
+  h1 { letter-spacing: -.6px; }
+  .authors { font-size: 18px; }
+  .tldr { display: block; font-size: 16px; }
+  .tldr strong { display: block; margin-bottom: 4px; }
+  #abstract-text { text-align: left; }
+  .abstract-section { padding-block: 33px; }
+  .method { padding-block: 35px; }
+  h2 { font-size: 27px; }
+  footer { flex-direction: column; gap: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Two camera views and one shared world-space reconstruction per example. */
+.results { padding-top: 8px; padding-bottom: 58px; }
+.results h2 { margin-bottom: 30px; }
+.results-list { display: grid; gap: 38px; }
+.result-example { display: grid; grid-template-columns: 3fr 2fr; gap: 18px; align-items: center; }
+.result-example + .result-example { border-top: 1px solid #e8ebef; padding-top: 38px; }
+.result-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; min-width: 0; }
+.result-image { overflow: hidden; }
+.result-image img { width: 100%; height: auto; }
+.result-orbit { min-width: 0; }
+.result-orbit video { display: block; width: 100%; height: auto; border-radius: 5px; background: #fafafa; }
+@media (max-width: 760px) {
+  .results { padding-bottom: 35px; }
+  .result-example { grid-template-columns: 1fr; gap: 16px; }
+  .result-images { gap: 8px; }
+  .result-orbit { width: 100%; max-width: 560px; justify-self: center; }
+  .results-list { gap: 28px; }
+  .result-example + .result-example { padding-top: 28px; }
+}
+
+.implications { padding-top: 8px; padding-bottom: 58px; }
+.implications h2 { margin-bottom: 28px; }
+.implications figure + figure { margin-top: 38px; }
+.implications .figure-button img { width: 100%; height: auto; }
+/* Hide PDF page margins while preserving the complete source images. */
+.implications figure .figure-button { overflow: hidden; }
+.implications figure:nth-of-type(1) .figure-button { aspect-ratio: 2400 / 1110; }
+.implications figure:nth-of-type(2) .figure-button { aspect-ratio: 2400 / 580; }
+.implications figure:nth-of-type(2) .figure-button img { margin-top: -18.458333%; }
+.implications figcaption { margin-top: 10px; font-size: 16px; line-height: 1.7; color: var(--ink); }
+@media (max-width: 640px) {
+  .implications { padding-bottom: 35px; }
+  .implications figure + figure { margin-top: 28px; }
+  .implications figcaption { font-size: 14px; }
+}
